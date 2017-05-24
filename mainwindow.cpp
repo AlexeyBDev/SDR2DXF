@@ -1,6 +1,6 @@
 #include "mainwindow.h"
+#include "fileelemen.h"
 
-//#include <QtWidgets>
 #include <QWidget>
 #include <QLabel>
 #include <QLineEdit>
@@ -11,37 +11,40 @@
 
 namespace SDR2DXF {
 
+/*******************************************************************/
+
 MainWindow::MainWindow(QWidget *parent) :
     QWidget(parent)
 {
     // global var
     int margin = 5;
-    int spacing = 5;
+//    int spacing = 5;
 
-    // grid layout
-    QGridLayout *gridInputData = new QGridLayout;
-    gridInputData->setMargin(margin);
-    gridInputData->setSpacing(spacing);
+//    // grid layout
+//    QGridLayout *gridInputData = new QGridLayout;
+//    gridInputData->setMargin(margin);
+//    gridInputData->setSpacing(spacing);
 
-    // the block for input file
-    QLabel *fbw_lblInput = new QLabel(tr("Input file: "));
-    //fbw_lblInput->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
-    fbw_leInput = new QLineEdit;
-    //fbw_leInput->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
-    QPushButton *fbw_pbInput = new QPushButton(tr("Browse source..."));
-    //fbw_pbInput->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed));
+//    // the block for input file
+//    QLabel *fbw_lblInput = new QLabel(tr("Input file: "));
+//    //fbw_lblInput->setSizePolicy(QSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding));
+//    fbw_leInput = new QLineEdit;
+//    //fbw_leInput->setSizePolicy(QSizePolicy(QSizePolicy::Fixed, QSizePolicy::Minimum));
+//    QPushButton *fbw_pbInput = new QPushButton(tr("Browse source..."));
+//    //fbw_pbInput->setSizePolicy(QSizePolicy(QSizePolicy::Minimum, QSizePolicy::Fixed));
 
-    // the block for output file
-    QLabel *fbw_lblOutput = new QLabel(tr("Output file: "));
-    fbw_leOutput = new QLineEdit;
-    QPushButton *fbw_pbOutput = new QPushButton(tr("Browse output..."));
+//    // the block for output file
+//    QLabel *fbw_lblOutput = new QLabel(tr("Output file: "));
+//    fbw_leOutput = new QLineEdit;
+//    QPushButton *fbw_pbOutput = new QPushButton(tr("Browse output..."));
 
-    gridInputData->addWidget(fbw_lblInput, 0, 0);
-    gridInputData->addWidget(fbw_leInput, 0, 1);
-    gridInputData->addWidget(fbw_pbInput, 0, 2);
-    gridInputData->addWidget(fbw_lblOutput, 1, 0);
-    gridInputData->addWidget(fbw_leOutput, 1, 1);
-    gridInputData->addWidget(fbw_pbOutput, 1, 2);
+//    gridInputData->addWidget(fbw_lblInput, 0, 0);
+//    gridInputData->addWidget(fbw_leInput, 0, 1);
+//    gridInputData->addWidget(fbw_pbInput, 0, 2);
+//    gridInputData->addWidget(fbw_lblOutput, 1, 0);
+//    gridInputData->addWidget(fbw_leOutput, 1, 1);
+//    gridInputData->addWidget(fbw_pbOutput, 1, 2);
+    fileElemen *FE = new fileElemen(this);
 
     // the table view
     QTableView *fbw_Table = new QTableView;
@@ -75,15 +78,16 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // the common block
     QVBoxLayout *fbw_CommonBlock = new QVBoxLayout(this);
-    fbw_CommonBlock->addLayout(gridInputData);
+    //fbw_CommonBlock->addLayout(gridInputData);
+    fbw_CommonBlock->addWidget(FE);
     fbw_CommonBlock->addLayout(fbw_BoxTable);
     //fbw_CommonBlock->addLayout(fbw_BoxCommLine);
     fbw_CommonBlock->addLayout(fbw_GroupB);
     fbw_CommonBlock->setMargin(margin);
 
-    connect(fbw_pbInput, SIGNAL(clicked(bool)), SLOT(openFileSlot()));
-    connect(fbw_pbOutput, SIGNAL(clicked(bool)), SLOT(saveFileSlot()));
-    connect(fbw_ClearB, SIGNAL(clicked(bool)), SLOT(clearSlot()));
+//    connect(fbw_pbInput, SIGNAL(clicked(bool)), SLOT(openFileSlot()));
+//    connect(fbw_pbOutput, SIGNAL(clicked(bool)), SLOT(saveFileSlot()));
+//    connect(fbw_ClearB, SIGNAL(clicked(bool)), SLOT(clearSlot()));
 
 }
 

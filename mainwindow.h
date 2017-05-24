@@ -8,6 +8,8 @@
 
 namespace SDR2DXF {
 
+/*******************************************************************/
+
 class MainWindow : public QWidget
 {
     Q_OBJECT
@@ -23,33 +25,7 @@ public:
 
 public slots:
 
-    void openFileSlot()
-    {
-        inputFileName = QFileDialog::getOpenFileName(this, tr("Open File"),
-                                                          "",
-                                                          tr("Sokkia data file (*.sdr)"));
-        if(inputFileName != "") {
-            fbw_leInput->setText(inputFileName);
-            outputFileName = inputFileName;
-            outputFileName.replace(inputFileName.size() - 3,
-                                   3,
-                                   "dxf");
-            fbw_leOutput->setText(outputFileName);
-        }
-        else
-            inputFileName = fbw_leInput->text();
-    }
 
-    void saveFileSlot()
-    {
-        outputFileName = QFileDialog::getSaveFileName(this, tr("Save output DXF file"),
-                                                      "",
-                                                      tr("DXF (*.dxf"));
-        if(outputFileName != "")
-            fbw_leOutput->setText(outputFileName);
-        else
-            outputFileName = fbw_leOutput->text();
-    }
 
     void clearSlot()
     {
@@ -63,6 +39,7 @@ public slots:
 
 };
 
+/*******************************************************************/
 
 } // namespace SDR2DXF
 
