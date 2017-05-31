@@ -16,12 +16,14 @@ SOURCES += \
         controlbuttons.cpp              \
         fileelemen.cpp                  \
         main.cpp                        \
-        mainwindow.cpp
+        mainwindow.cpp                  \
+        table.cpp
 
 HEADERS  += \
         controlbuttons.h                \
         fileelemen.h                    \
-        mainwindow.h
+        mainwindow.h                    \
+        table.h
 
 
 
