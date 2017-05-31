@@ -12,10 +12,16 @@ TARGET = SDR2DXF
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp \
-    fileelemen.cpp
+SOURCES += \
+        controlbuttons.cpp              \
+        fileelemen.cpp                  \
+        main.cpp                        \
+        mainwindow.cpp
 
-HEADERS  += mainwindow.h \
-    fileelemen.h
+HEADERS  += \
+        controlbuttons.h                \
+        fileelemen.h                    \
+        mainwindow.h
+
+
 

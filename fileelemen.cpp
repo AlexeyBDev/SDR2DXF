@@ -71,11 +71,23 @@ void fileElemen::saveFileSlot()
 {
         outputFileName = QFileDialog::getSaveFileName(this, tr("Save output DXF file"),
                                                       "",
-                                                      tr("DXF (*.dxf"));
+                                                      tr("DXF (*.dxf)"));
         if(outputFileName != "")
             leOutput->setText(outputFileName);
         else
             outputFileName = leOutput->text();
+}
+
+/*******************************************************************/
+
+void fileElemen::clearInputLineEdit() {
+    leInput->clear();
+}
+
+/*******************************************************************/
+
+void fileElemen::clearOutputLineEdit() {
+    leOutput->clear();
 }
 
 /*******************************************************************/

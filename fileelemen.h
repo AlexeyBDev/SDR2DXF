@@ -22,6 +22,9 @@ public:
 public slots:
     void openFileSlot();
     void saveFileSlot();
+
+    void clearInputLineEdit();
+    void clearOutputLineEdit();
 };
 
 } // namespace SDR2DXF
